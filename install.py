@@ -1,7 +1,12 @@
 import PyInstaller.__main__
-import os
+from os.path import join
+import constants
+
+consts = constants.constants()
 
 PyInstaller.__main__.run([
     '--onefile',
-    os.path.join('', 'parser.py'),
+    '--noconsole',
+    '--icon=%s' % join('.', 'icon.ico'),
+    join('', 'forms.py')
 ])
